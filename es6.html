@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES 6 Features</title>
+</head>
+<body>
+
+<script>
+    let x = 10 // var x =100
+    const PI = 22 / 7
+    //template literals
+    console.log(`${x} PI is ${PI}`) // `Ksh ${price}`
+
+    //arrow
+    const add = (a, b) => a + b
+
+    function multiply(a, b) {
+        return a * b
+    }
+
+    console.log(add(1, 2))
+
+    // destructuring  // unpack values
+    const patient = {
+        name: "Jim Joe",
+        dob: "18/12/1999",
+        gender: "M"
+    }
+
+    // let name = patient.name
+    // let dob = patient.dob
+    // let gender = patient.gender
+
+    const {gender, name, dob} = patient
+    console.log(`Patient name is ${name} and gender is ${gender}`)
+
+    let details = ["John", "Miriam"]
+
+    let [name1, name2] = details
+
+    //default param
+    function divide(a, b, rounded = false) {
+        let res = a / b
+        if (rounded === true) {
+            return Math.round(res)
+        }
+        return res
+    }
+
+    let res1 = divide(10, 3, true)
+    let res2 = divide(10, 3)
+
+    console.log(res1, res2)
+
+    //spread operator
+    function flexibleAdd(...nums) {
+        let total = 0
+        for (let value of nums) {
+            total += value
+        }
+        return total
+    }
+
+    console.log(flexibleAdd(10, 20, 30, 10))
+
+    let people = ["Jill", "Jack", "Doe"]
+    let others = ["Jeremy", "Jack"]
+
+    let merged = [...people, ...others]
+
+    console.log(merged)
+
+    let data = [...people, "Hilda", "Ahmed"]
+
+    //modules -- files
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
